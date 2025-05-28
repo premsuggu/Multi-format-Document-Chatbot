@@ -1,0 +1,11 @@
+sentence-transformers
+faiss-cpu
+pymupdf
+pillow
+pytesseract
+pandas
+python-docx
+python-pptx
+requests
+beautifulsoup4
+ollama
