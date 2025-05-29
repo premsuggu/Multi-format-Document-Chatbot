@@ -41,32 +41,10 @@ Developed as part of a self project, this project showcases how modern NLP, docu
 
 | Component         | Tools Used |
 |------------------|------------|
-| Language Model    | OpenAI GPT / Hugging Face Transformers |
-| File Parsing      | `PyMuPDF`, `python-docx`, `openpyxl`, `python-pptx` |
-| OCR               | `Tesseract OCR` via `pytesseract` |
-| Semantic Search   | `FAISS`, `ChromaDB`, `sentence-transformers` |
-| Web Crawling      | `requests`, `BeautifulSoup` |
-| Data Analysis     | `pandas`, `numpy` |
-| Frontend (optional) | Streamlit / Flask / Gradio (modular setup) |
-
-## Project Structure
-
-mando/
-├── ingestion/
-│   ├── pdf_parser.py
-│   ├── docx_parser.py
-│   ├── ocr_extractor.py
-│   ├── web_scraper.py
-├── indexing/
-│   ├── embedder.py
-│   ├── vector_store.py
-├── qa_engine/
-│   ├── retriever.py
-│   ├── llm_interface.py
-│   ├── answer_formatter.py
-├── data/
-│   ├── uploads/
-│   ├── indexed_data/
-├── app.py
-├── README.md
-└── requirements.txt
+| LLM                            | llama3.2 and anyother open-sourced model |
+| File Parsing                   | `PyMuPDF`, `python-docx`, `openpyxl`, `python-pptx` |
+| OCR                            | `Tesseract OCR` via `pytesseract` |
+| Semantic Search                | `FAISS`, `sentence-transformers` |
+| Web Crawling                   | `requests`, `BeautifulSoup` |
+| Data Analysis                  | `pandas`, `numpy` |
+| Frontend (yet to be developed) | Streamlit / Flask / Gradio (modular setup) |
