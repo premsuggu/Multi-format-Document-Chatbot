@@ -1,13 +1,18 @@
-# app.py
-
 import os
 from document_loader import extract_txt_content
-from web_extractor import  extract_web_content
-from web_extractor import  extract_urls
+from web_extractor import extract_web_content, extract_urls
 from qa_chain import QAChain
 
 def main():
     print("Starting Document QA Application...")
+
+    # Step 1: Ask user to choose the model
+    available_models = ['llama3', 'mistral']
+    model_name = input(f"Choose model {available_models}: ").strip().lower()
+
+    if model_name not in available_models:
+        print(f"Invalid choice. Defaulting to 'llama3'.")
+        model_name = 'llama3'
 
     # Initial files to load
     files = [r"data\image.png"]
@@ -55,10 +60,10 @@ def main():
                 print("File not found. Please try again.")
 
         else:
-            # Search and answer
+            # Search and answer using selected model
             relevant_chunks = qa.search(query, top_k=5)
-            answer, chat_history = qa.chat(query, relevant_chunks, chat_history)
-            print(f"\n Bot: {answer}")
+            answer, chat_history = qa.chat(query, relevant_chunks, chat_history, model_name=model_name)
+            print(f"\n Bot ({model_name}): {answer}")
 
 if __name__ == "__main__":
     main()
